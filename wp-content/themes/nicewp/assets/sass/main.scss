@@ -36,9 +36,14 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 /* ==================================== */
 /* ============== TOOLS =============== */
-@import '1-tools/normalize';
+// Remove comment from 1-tools/normalize if you dont use bootstrap-grid
+// @import '1-tools/normalize';
+@import '1-tools/bootstrap-grid';
 @import '1-tools/bourbon/bourbon';
 @import '1-tools/vendors';
+@import '1-tools/mixins';
+// Remove comment from 1-tools/animate if you need ready animation syles
+// @import '1-tools/animate';
 
 
 /* ==================================== */
