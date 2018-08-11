@@ -17,7 +17,7 @@ let source = require('vinyl-source-stream'),
 
 //CSS
 gulp.task('sass:main', function () {
-    return gulp.src(sourcePath + 'sass/main.scss')
+    return gulp.src(sourcePath + 'sass/style.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: require('node-bourbon').includePaths
@@ -43,8 +43,7 @@ gulp.task('minify:css', ['sass:main', 'scss:backend'], function () {
     return gulp.src(buildPath + 'sass/*.css')
         .pipe(cleanCSS({
             compatibility: 'ie9',
-            level: 2,
-            specialComments: 0
+            level: 2
         }))
         .pipe(size())
         .pipe(gulp.dest(buildPath + 'css'));
@@ -52,9 +51,9 @@ gulp.task('minify:css', ['sass:main', 'scss:backend'], function () {
 
 //backend
 gulp.task('scss:backend', function () {
-    return gulp.src('./assets/sass/backend/colors.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(buildPath + 'css'));
+    return gulp.src(sourcePath + 'css/admin/colors.scss')
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(gulp.dest(sourcePath + 'css/admin'));
 });
 
 //js

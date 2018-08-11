@@ -1,0 +1,12 @@
+$base-color: #263c78;
+$icon-color: #ceb888;
+$highlight-color: darken($base-color, 15%);
+$notification-color: #e1a948;
+$button-color: #e1a948;
+
+$menu-submenu-text: #e2ecf1;
+$menu-submenu-focus-text: #fff;
+$menu-submenu-background: darken($icon-color, 15%);
+
+@import "../../../../../../wp-admin/css/colors/_admin.scss";
+@import "backend";

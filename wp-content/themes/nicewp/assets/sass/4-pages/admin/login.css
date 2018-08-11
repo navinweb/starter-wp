@@ -1,0 +1,10 @@
+body {
+    background: #fff;
+    color: #000000;
+}
+
+.login h1 a {
+    background-image: none, url(../../images/logo.jpg);
+    background-size: contain;
+    width: 100%;
+}

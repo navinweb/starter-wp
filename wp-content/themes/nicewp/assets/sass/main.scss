@@ -1,0 +1,28 @@
+/**!
+* Theme Name: AeJuice
+* Author: Anatoliy Kirzo
+* Author URI: https://navinweb.net
+* Version: 1.0.0
+* Text Domain: aejuice
+**/
+
+// 1 - TOOLS
+@import '1-tools/bourbon/bourbon';
+@import '1-tools/libs';
+@import '1-tools/fonts';
+@import '1-tools/vars';
+
+// 2 - BLOCKS
+@import '2-blocks/home';
+@import '2-blocks/overwrite';
+@import '2-blocks/products';
+@import '2-blocks/single';
+
+/* ==================================== */
+/* ============== MEDIA =============== */
+@import "2-blocks/media";
+
+/* ==================================== */
+/* ============= BACKEND ============== */
+
+@import "backend/colors.scss";

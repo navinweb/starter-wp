@@ -24,7 +24,7 @@
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'nicewp' ), 'nicewp', '<a href="http://nicewp.net/">Anatolii Kirzo</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'nicewp' ), 'nicewp', '<a href="http://navinweb.net/">Anatolii Kirzo</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
