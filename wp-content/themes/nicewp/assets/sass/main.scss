@@ -1,28 +1,59 @@
-/**!
-* Theme Name: AeJuice
-* Author: Anatoliy Kirzo
-* Author URI: https://navinweb.net
-* Version: 1.0.0
-* Text Domain: aejuice
-**/
+/*!
+Theme Name: nicewp
+Theme URI: http://underscores.me/
+Author: Anatolii Kirzo
+Author URI: http://navinweb.net/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: nicewp
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-// 1 - TOOLS
-@import '1-tools/bourbon/bourbon';
-@import '1-tools/libs';
-@import '1-tools/fonts';
-@import '1-tools/vars';
-
-// 2 - BLOCKS
-@import '2-blocks/home';
-@import '2-blocks/overwrite';
-@import '2-blocks/products';
-@import '2-blocks/single';
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+  ## Galleries
+--------------------------------------------------------------*/
 
 /* ==================================== */
-/* ============== MEDIA =============== */
-@import "2-blocks/media";
+/* ============== TOOLS =============== */
+@import '1-tools/normalize';
+@import '1-tools/bourbon/bourbon';
+@import '1-tools/vendors';
+
+
+/* ==================================== */
+/* ============== BASE ================ */
+@import '2-tools/fonts';
+@import '2-tools/variables';
+
+/* ==================================== */
+/* ============ COMPONENTS ============ */
+@import '3-components/home';
+
+/* ==================================== */
+/* ============== PAGES =============== */
+@import '4-components/home';
 
 /* ==================================== */
 /* ============= BACKEND ============== */
-
-@import "backend/colors.scss";
+@import "4-pages/admin/colors.scss";
