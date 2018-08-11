@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package navinweb
+ * @package nicewp
  */
 
 ?>
@@ -36,15 +36,15 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$navinweb_description = get_bloginfo( 'description', 'display' );
-			if ( $navinweb_description || is_customize_preview() ) :
+			$nicewp_description = get_bloginfo( 'description', 'display' );
+			if ( $nicewp_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $navinweb_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $nicewp_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'navinweb' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'nicewp' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',

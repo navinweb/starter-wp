@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package navinweb
+ * @package nicewp
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses navinweb_header_style()
+ * @uses nicewp_header_style()
  */
-function navinweb_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'navinweb_custom_header_args', array(
+function nicewp_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'nicewp_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'navinweb_header_style',
+		'wp-head-callback'       => 'nicewp_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'navinweb_custom_header_setup' );
+add_action( 'after_setup_theme', 'nicewp_custom_header_setup' );
 
-if ( ! function_exists( 'navinweb_header_style' ) ) :
+if ( ! function_exists( 'nicewp_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see navinweb_custom_header_setup().
+	 * @see nicewp_custom_header_setup().
 	 */
-	function navinweb_header_style() {
+	function nicewp_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
