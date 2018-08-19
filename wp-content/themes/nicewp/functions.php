@@ -124,6 +124,11 @@ require get_template_directory() . '/inc/nicewp-tags.php';
 require get_template_directory() . '/inc/nicewp-header.php';
 
 /**
+ * Functions which disable excess WordPress stuff.
+ */
+require get_template_directory() . '/inc/nicewp-disable.php';
+
+/**
  * Branding.
  */
 function custom_login_styles()
