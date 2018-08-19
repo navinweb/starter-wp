@@ -1,9 +1,7 @@
 <?php
 /**
- * Comments.
+ * Disable support for comments and trackbacks in post types
  */
-
-// Disable support for comments and trackbacks in post types
 function df_disable_comments_post_types_support()
 {
     $post_types = get_post_types();
@@ -16,7 +14,9 @@ function df_disable_comments_post_types_support()
 }
 add_action('admin_init', 'df_disable_comments_post_types_support');
 
-// Close comments on the front-end
+/**
+ * Close comments on the front-end
+ */
 function df_disable_comments_status()
 {
     return false;
@@ -89,7 +89,7 @@ function remove_dashboard_meta()
     //Remove the 'Activity' widget (since 3.8)
     remove_meta_box('dashboard_activity', 'dashboard', 'normal');
     //Remove Try Gutenberg Dashboard Panel
-    remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
+    remove_action('try_gutenberg_panel', 'wp_try_gutenberg_panel');
 
 }
 add_action('admin_init', 'remove_dashboard_meta');
@@ -134,14 +134,13 @@ function nicewp_sender_email($original_email_address)
 {
     return 'test@gmail.com';
 }
+add_filter('wp_mail_from', 'nicewp_sender_email');
 
 function nicewp_sender_name($original_email_from)
 {
     return 'NiceWP';
 }
-add_filter('wp_mail_from', 'nicewp_sender_email');
 add_filter('wp_mail_from_name', 'nicewp_sender_name');
-
 
 function nicewp_remove_help($old_help, $screen_id, $screen)
 {
