@@ -8,5 +8,5 @@ $menu-submenu-text: #e2ecf1;
 $menu-submenu-focus-text: #fff;
 $menu-submenu-background: darken($icon-color, 15%);
 
-@import "../../../../../../wp-admin/css/colors/_admin.scss";
+@import "../../../../../../../wp-admin/css/colors/_admin.scss";
 @import "backend";

@@ -17,7 +17,7 @@ let source = require('vinyl-source-stream'),
 
 //CSS
 gulp.task('sass:main', function () {
-    return gulp.src(sourcePath + 'sass/style.scss')
+    return gulp.src(sourcePath + 'sass/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: require('node-bourbon').includePaths
@@ -29,13 +29,19 @@ gulp.task('sass:main', function () {
             browsers: ['last 15 versions'],
             cascade: false
         }))
-        // .pipe(cleanCSS())
+        .pipe(cleanCSS())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'));
 });
 
 gulp.task('scss:watch', function () {
-    return gulp.watch([sourcePath + 'sass/**/*.sass', sourcePath + 'sass/**/*.scss'], ['sass:main']);
+    return gulp.watch(
+        [
+            sourcePath + 'sass/**/*.sass',
+            sourcePath + 'sass/**/*.scss',
+            '!' + sourcePath + 'sass/4-pages/admin/*'
+        ],
+        ['sass:main']);
 });
 
 //minify CSS
@@ -51,9 +57,23 @@ gulp.task('minify:css', ['sass:main', 'scss:backend'], function () {
 
 //backend
 gulp.task('scss:backend', function () {
-    return gulp.src(sourcePath + 'css/admin/colors.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest(sourcePath + 'css/admin'));
+    return gulp.src(sourcePath + 'sass/4-pages/admin/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 15 versions'],
+            cascade: false
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(sourcePath + 'css/admin/'));
+});
+
+gulp.task('backend:watch', function () {
+    return gulp.watch(
+        [sourcePath + 'sass/4-pages/admin/*.scss'], ['scss:backend']
+    );
 });
 
 //js
@@ -74,13 +94,31 @@ gulp.task('minify:js', function () {
 });
 
 gulp.task('clean', function () {
-    return gulp.src([buildPath + 'css', buildPath + 'js', buildPath + 'fonts'], {read: false})
+    return gulp.src(
+        [
+            buildPath + 'css',
+            buildPath + 'js',
+            buildPath + 'fonts'
+        ],
+        { read: false }
+    )
         .pipe(clean());
 });
 
 //task groups
-gulp.task('default', ['copy:fonts', 'sass:main']);
-gulp.task('watch', ['scss:watch', 'browserify:watch']);
+gulp.task('watch',
+    [
+        'scss:watch',
+        'backend:watch',
+        'browserify:watch'
+    ]
+);
+
 gulp.task('production', ['clean'], function () {
-    gulp.start('sass:main', 'scss:backend', 'minify:js', 'minify:css');
+    gulp.start(
+        'sass:main',
+        'scss:backend',
+        'minify:js',
+        'minify:css'
+    );
 });

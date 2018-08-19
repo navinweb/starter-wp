@@ -11,7 +11,7 @@ Text Domain: nicewp
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 */
-/*--------------------------------------------------------------
+/*!
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
@@ -32,12 +32,12 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 # Media
 	## Captions
   ## Galleries
---------------------------------------------------------------*/
+--------------------------------------------------------------
+*/
 
 /* ==================================== */
 /* ============== TOOLS =============== */
-// Remove comment from 1-tools/normalize if you dont use bootstrap-grid
-// @import '1-tools/normalize';
+@import '1-tools/normalize';
 @import '1-tools/bootstrap-grid';
 @import '1-tools/bourbon/bourbon';
 @import '1-tools/vendors';
@@ -45,19 +45,18 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 // Remove comment from 1-tools/animate if you need ready animation syles
 // @import '1-tools/animate';
 
-
 /* ==================================== */
 /* ============== BASE ================ */
-@import '2-tools/fonts';
-@import '2-tools/variables';
+@import '2-base/fonts';
+@import '2-base/variables';
 
 /* ==================================== */
 /* ============ COMPONENTS ============ */
-@import '3-components/home';
+// @import '3-components/home';
 
 /* ==================================== */
 /* ============== PAGES =============== */
-@import '4-components/home';
+@import '4-pages/home';
 
 /* ==================================== */
 /* ============= BACKEND ============== */
