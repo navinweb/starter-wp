@@ -1,12 +1,4 @@
 <?php
-/**
- * nicewp functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package nicewp
- */
-
 if (!function_exists('nicewp_setup')):
     /**
      * Sets up theme defaults and registers support for various WordPress features.
