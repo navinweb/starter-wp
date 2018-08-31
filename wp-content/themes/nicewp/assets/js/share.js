@@ -33,3 +33,13 @@ window.googlePlusShare = function (event) {
 
   window.open('https://plus.google.com/share?url=' + url, 'sharer', 'toolbar=1,status=1');
 };
+
+window.pinterestShare = function (event) {
+  event.preventDefault();
+
+  var title = encodeURIComponent(document.getElementsByTagName("title")[0].innerHTML);
+  var url = encodeURIComponent(window.location.href);
+  var image = encodeURIComponent(document.getElementsByClassName("attachment-nicewp-featured-image")[0].src.replace('-1200x400', ''));
+
+  window.open('https://www.pinterest.com/pin/create/button/?url=' + url + '&media=' + image + '&description=' + title);
+};
