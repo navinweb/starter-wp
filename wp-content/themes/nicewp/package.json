@@ -33,7 +33,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "compass-mixins": "^0.12.10",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.11.3",
     "datatables.net-bs": "^1.10.19",
     "datatables.net-responsive": "^2.2.3",
     "datatables.net-responsive-bs": "^2.2.3",
